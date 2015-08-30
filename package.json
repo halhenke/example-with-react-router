@@ -42,6 +42,7 @@
     "babel-eslint": "^4.0.10",
     "babel-loader": "^5.3.2",
     "coveralls": "^2.11.4",
+    "css-loader": "^0.16.0",
     "eslint": "1.2.0",
     "eslint-loader": "^1.0.0",
     "eslint-plugin-react": "^3.2.3",
@@ -60,13 +61,17 @@
     "node-libs-browser": "^0.5.2",
     "phantomjs": "^1.9.18",
     "precommit-hook": "^3.0.0",
+    "react": "^0.13.3",
     "react-hot-loader": "^1.2.8",
+    "react-motion": "^0.2.7",
+    "react-router": "^0.13.3",
     "rimraf": "^2.4.2",
+    "style-loader": "^0.12.3",
     "tap-xunit": "^1.1.1",
     "webpack": "^1.11.0",
     "webpack-dev-server": "^1.10.1"
   },
-  "pre-commit": [
-    "lint"
-  ]
+  "dependencies": {
+    "component-router": "file:../../component-router"
+  }
 }

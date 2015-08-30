@@ -1,16 +1,10 @@
 import React from 'react';
-import Component from '..';
+import routes from './App';
+import Router from 'react-router';
 
 
-const App = React.createClass({
-  render() {
-    return (
-      <div>
-        <Component />
-      </div>
-    );
-  }
+// Router.run(routes, Router.HashLocation, (Root) => {
+Router.run(routes, Router.HistoryLocation, (Root) => {
+  React.render(<Root/>, document.body);
 });
 
-
-React.render(<App />, document.body);

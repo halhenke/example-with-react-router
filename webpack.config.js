@@ -19,7 +19,11 @@ var production = {
 
   module: {
     loaders: [
-      {test: /\.js$/, loader: 'babel', include: [path.resolve('src')]}
+      {test: /\.js$/, loader: 'babel', include: [path.resolve('src')]},
+      {
+        test: /\.css$/,
+        loader: 'style!css?modules&sourceMap&localIdentName=[name]__[local]___[hash:base64:5]'
+      }
     ]
   },
   resolve: {extensions: ['', '.js']},
@@ -29,6 +33,7 @@ var production = {
 
 var development = {
   devtool: 'eval',
+  // devtool: 'source-map',
 
   entry: [
     './src/example/Example.js',
@@ -47,7 +52,11 @@ var development = {
   ],
   module: {
     loaders: [
-      {test: /\.js$/, loaders: ['react-hot', 'babel'], include: [path.resolve('src')]}
+      {test: /\.js$/, loaders: ['react-hot', 'babel'], include: [path.resolve('src')]},
+      {
+        test: /\.css$/,
+        loader: 'style!css?modules&sourceMap&localIdentName=[name]__[local]___[hash:base64:5]'
+      }
     ],
     preLoaders: [
       {test: /\.js$/, loaders: ['eslint'], include: [path.resolve('src')]}
@@ -86,7 +95,11 @@ var build = {
   ],
   module: {
     loaders: [
-      {test: /\.js$/, loader: 'babel', include: [path.resolve('src')]}
+      {test: /\.js$/, loader: 'babel', include: [path.resolve('src')]},
+      {
+        test: /\.css$/,
+        loader: 'style!css?modules&sourceMap&localIdentName=[name]__[local]___[hash:base64:5]'
+      }
     ]
   },
   resolve: {extensions: ['', '.js']},
