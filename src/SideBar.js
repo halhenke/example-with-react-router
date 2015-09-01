@@ -1,8 +1,7 @@
 import React from 'react';
-import Router from 'react-router';
+import {Link} from 'react-router';
 import * as data from './data';
 import styles from './SideBar.css';
-const {Link} = Router;
 
 
 const CategoryNav = React.createClass({
@@ -143,5 +142,4 @@ const Index = React.createClass({
   }
 });
 
-// export {Sidebar, SideApp, Index, Item};
 export {Sidebar, Index, Item};

@@ -62,7 +62,7 @@ const SideApp = React.createClass({
 });
 
 
-const plainFooApp = React.createClass({
+const PlainFooApp = React.createClass({
   render() {
     return (
       <div className={styles.app}>
@@ -75,7 +75,7 @@ const plainFooApp = React.createClass({
   }
 });
 
-const bigFooApp = React.createClass({
+const BigFooApp = React.createClass({
   render() {
     return (
       <div className={styles.app}>
@@ -93,14 +93,37 @@ const bigFooApp = React.createClass({
   }
 });
 
+const CompositeFooApp = React.createClass({
+  render() {
+    return (
+      <div>
+        <LocationHtml5 />
+
+        <div>
+          <Url query={{component: 'small'}} isActiveClass={styles.active}>Just FooBar</Url>
+        </div>
+        <div>
+          <Url query={{component: 'big'}} isActiveClass={styles.active}>FooBar Salad</Url>
+        </div>
+
+        <ComponentRouter namespace="component" config={{
+          [getDefault()]: 'quickstart',
+          small: PlainFooApp,
+          big: BigFooApp
+        }} className={styles.content} />
+      </div>
+    );
+  }
+
+});
+
 const routes = (
   <Route handler={SideApp}>
     <DefaultRoute handler={Index}/>
     <Route name="item" path=":category/:name" handler={Item} />
-    <Route name="Component - FooBar" path="component-foo" handler={plainFooApp} />
-    <Route name="Component - All Examples" path="component-all" handler={bigFooApp} />
+    <Route name="Component - FooBar" path="component-foo" handler={PlainFooApp} />
+    <Route name="Component - All Examples" path="component-all" handler={BigFooApp} />
   </Route>
 );
 
-// export {componentApp, routes};
 export default routes;

@@ -27,25 +27,6 @@ const Pie = React.createClass({
 });
 
 
-const Content = React.createClass({
-  propTypes: {
-    componentRouter: React.PropTypes.object
-  },
-
-
-  shouldComponentUpdate({componentRouter: {Component}}) {
-    return Component !== this.props.componentRouter.Component;
-  },
-
-
-  render() {
-    const {Component} = this.props.componentRouter;
-
-    return <Component />;
-  }
-});
-
-
 const Chart = React.createClass({
   shouldComponentUpdate() {
     return false;
@@ -64,10 +45,7 @@ const Chart = React.createClass({
           [getDefault()]: 'bar',
           bar: Bar,
           pie: Pie
-        }}>
-          <Content />
-        </ComponentRouter>
-
+        }} />
       </div>
     );
   }
