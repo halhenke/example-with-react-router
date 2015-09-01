@@ -93,29 +93,6 @@ const BigFooApp = React.createClass({
   }
 });
 
-const CompositeFooApp = React.createClass({
-  render() {
-    return (
-      <div>
-        <LocationHtml5 />
-
-        <div>
-          <Url query={{component: 'small'}} isActiveClass={styles.active}>Just FooBar</Url>
-        </div>
-        <div>
-          <Url query={{component: 'big'}} isActiveClass={styles.active}>FooBar Salad</Url>
-        </div>
-
-        <ComponentRouter namespace="component" config={{
-          [getDefault()]: 'quickstart',
-          small: PlainFooApp,
-          big: BigFooApp
-        }} className={styles.content} />
-      </div>
-    );
-  }
-
-});
 
 const routes = (
   <Route handler={SideApp}>

@@ -25,7 +25,6 @@
   background: #06c;
   display: flex;
   justify-content: space-between;
-  height: 44px;
 }
 
 .nav {
@@ -36,6 +35,7 @@
 
 .nav ul {
   list-style: none;
+  margin: 0;
 }
 
 .nav ul li {

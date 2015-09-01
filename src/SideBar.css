@@ -28,12 +28,13 @@ a.active {
   background: #eee;
   padding: 20px;
   margin: 0 20px 20px 20px;
-  width: 200px;
+  width: 20%;
   cursor: pointer;
 }
 
 .Content {
-  padding: 20px 20px 20px 300px;
+  float: left;
+  width: 70%;
 }
 
 .CategoryNav__Toggle:before {
