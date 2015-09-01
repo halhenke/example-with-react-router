@@ -58,7 +58,6 @@
     "node-libs-browser": "^0.5.2",
     "phantomjs": "^1.9.18",
     "precommit-hook": "^3.0.0",
-    "react": "^0.13.3",
     "react-hot-loader": "^1.2.8",
     "react-motion": "^0.2.7",
     "react-router": "^0.13.3",

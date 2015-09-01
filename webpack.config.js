@@ -9,7 +9,10 @@ var production = {
   entry: './src/example/Example.js',
   output: {filename: 'bundle.js', path: path.resolve('example')},
   plugins: [
-    new HtmlWebpackPlugin(),
+    new HtmlWebpackPlugin({
+      inject: 'body',
+      template: 'src/example/index.html'
+    }),
     new webpack.DefinePlugin({
       'process.env': {
         NODE_ENV: '"' + env + '"'
@@ -42,7 +45,10 @@ var development = {
   ],
   output: {filename: 'bundle.js', path: path.resolve('example')},
   plugins: [
-    new HtmlWebpackPlugin(),
+    new HtmlWebpackPlugin({
+      inject: 'body',
+      template: 'src/example/index.html'
+    }),
     new webpack.DefinePlugin({
       'process.env': {
         NODE_ENV: '"' + env + '"'
