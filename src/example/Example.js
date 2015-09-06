@@ -4,4 +4,4 @@ import Router from 'react-router';
 
 
 Router.run(routes, Router.HistoryLocation, Root =>
-  React.render(<Root/>, document.querySelector('#app')));
+  React.render(<Root/>, document.body));
